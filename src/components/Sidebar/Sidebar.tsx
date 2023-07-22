@@ -3,7 +3,17 @@ import React from "react";
 const Sidebar = () => {
   return (
     <>
-      <div className="flex-shrink-0 p-3" style={{ width: "280px" }}>
+      <div
+        className="flex-shrink-0 p-3 fixed-top bg-light "
+        style={{
+          top: "72px",
+          width: "280px",
+          height: "100%",
+          overflowY: "auto",
+          overflowX: "hidden",
+          borderRight: "1px solid #dee2e6",
+        }}
+      >
         <a
           href="/"
           className="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom"

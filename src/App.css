@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +37,24 @@
     transform: rotate(360deg);
   }
 } */
+
+.bg-light {
+  background-color: #c2c2c2;
+  color: rgb(37, 37, 37);
+}
+
+* {
+  overflow-x: hidden;
+}
+
+.addScroll {
+  overflow-y: scroll;
+  /* height: 100vh; */
+  overflow-x: scroll;
+}
+
+.removeScroll {
+  overflow-y: hidden;
+  /* height: 100vh; */
+  overflow-x: hidden;
+}
