@@ -4,6 +4,10 @@
 
 We aim to develop a dummy business intelligence dashboard with filter functionality that displays data. The goal is to mimic the filter behavior seen on platforms like Amazon, where selecting certain attributes adjusts the available filter options for other attributes based on the selected data.
 
+## Website Link
+
+https://loop-frontend-qnbi2abh4-aryansingh920.vercel.app/?vercelToolbarCode=E1LA9qRZ8PkW8i2
+
 ## How to run the page
 
 ```bash
