@@ -46,15 +46,3 @@
 * {
   overflow-x: hidden;
 }
-
-.addScroll {
-  overflow-y: scroll;
-  /* height: 100vh; */
-  overflow-x: scroll;
-}
-
-.removeScroll {
-  overflow-y: hidden;
-  /* height: 100vh; */
-  overflow-x: hidden;
-}

@@ -16,7 +16,7 @@ function App() {
           left: "22rem",
           top: "6rem",
           right: "0",
-          height: "100%",
+          height: "85%",
         }}
         className="container-fluid"
       >
