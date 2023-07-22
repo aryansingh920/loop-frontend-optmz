@@ -13,10 +13,11 @@ function App() {
       <div
         style={{
           position: "absolute",
-          left: "22rem",
+          left: "20rem",
           top: "6rem",
           right: "0",
           height: "85%",
+          width: "90%",
         }}
         className="container-fluid"
       >

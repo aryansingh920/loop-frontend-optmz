@@ -5,22 +5,9 @@ const ProductBox = () => {
   return (
     <div>
       <div className="row addScroll">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard /> <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard /> <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {[...Array(100)].map((e, i) => {
+          return <ProductCard element={i + 1} key={i} />;
+        })}
       </div>
     </div>
   );
