@@ -46,3 +46,80 @@
 * {
   overflow-x: hidden;
 }
+
+/* pagination.css */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin-right: 6px;
+}
+
+.pagination li:last-child {
+  margin-right: 0;
+}
+
+.pagination li a {
+  display: inline-block;
+  padding: 6px 12px;
+  line-height: 1.428571429;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.pagination li.active a {
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.pagination li.disabled a {
+  color: #777;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+  border-radius: 4px;
+}
+
+.pagination li a:hover,
+.pagination li a:focus {
+  background-color: #eeeeee;
+}
+
+.pagination .disabled a:hover,
+.pagination .disabled a:focus {
+  background-color: #fff;
+  cursor: not-allowed;
+}
+
+.pagination-box {
+  background-color: #fff;
+
+  display: "flex";
+  position: "fixed";
+  justify-content: "center";
+  align-items: "center";
+  margin-top: "20px";
+  margin-left: "100px";
+  bottom: "0";
+  width: "100%";
+  left: "0";
+  margin-bottom: "20px";
+}

@@ -14,7 +14,7 @@ interface CSVData {
 const ProductBox = () => {
   const [data, setData] = useState<CSVData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 100; // Show 100 items per page
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,27 +45,40 @@ const ProductBox = () => {
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div>
-      <div className="row addScroll">
+    <div style={{ position: "relative" }}>
+      <div
+        className="row addScroll"
+        style={{
+          height: "calc(100vh - 220px)", // Subtract the height of pagination from the viewport height
+          width: "100%",
+          overflowY: "scroll",
+          overflowX: "hidden",
+        }}
+      >
         {currentItems.map((item, index) => (
           <ProductCard key={index} element={item} />
         ))}
-        {/* move the pagination to center to */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginLeft: "-100px",
-            marginTop: "20px",
-          }}
-        >
-          <Pagination
-            currentPage={currentPage}
-            totalPages={Math.ceil(data.length / itemsPerPage)}
-            onPageChange={(page) => setCurrentPage(page)}
-          />
-        </div>
+      </div>
+      {/* move the pagination to the bottom center */}
+      <div
+        style={{
+          backgroundColor: "white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "fixed",
+          marginLeft: "10rem",
+          bottom: "0",
+          width: "100%",
+          left: "0",
+          height: "100px", // Set a fixed height for the pagination box
+        }}
+      >
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(data.length / itemsPerPage)}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
       </div>
     </div>
   );
