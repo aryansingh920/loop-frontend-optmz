@@ -60,6 +60,8 @@ const ProductBox: React.FC<Props> = ({
           transform: (value) => Number(value.trim()),
         });
 
+        console.log("result", result.data);
+
         setData(result.data);
         setModData(result.data);
       } catch (error) {
