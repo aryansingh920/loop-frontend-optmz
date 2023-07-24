@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header className="p-3 mb-3 border-bottom fixed-top bg-light">
       <div className="container">
@@ -16,7 +16,7 @@ const Header = () => {
               role="img"
               aria-label="Bootstrap"
             >
-              <use></use>
+              <use xlinkHref="#"></use>
             </svg>
           </a>
 
@@ -52,8 +52,8 @@ const Header = () => {
               className="form-control"
               placeholder="Search..."
               aria-label="Search"
-              spellCheck="false"
-              data-ms-editor="true"
+              spellCheck={false}
+              data-ms-editor={true}
             />
           </form>
 

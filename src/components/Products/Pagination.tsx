@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
 interface PaginationProps {
@@ -6,7 +7,13 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const Pagination = ({
+const styleNoTextSelect: React.CSSProperties = {
+  touchAction: "manipulation",
+  WebkitTouchCallout: "none",
+  userSelect: "none",
+};
+
+const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   totalPages,
   onPageChange,
@@ -91,9 +98,13 @@ const Pagination = ({
   return (
     <div>
       <nav aria-label="...">
-        <ul className="pagination">
-          <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+        <ul style={styleNoTextSelect} className="pagination">
+          <li
+            style={styleNoTextSelect}
+            className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
+          >
             <a
+              style={styleNoTextSelect}
               className="page-link"
               onClick={() => handlePageChange(currentPage - 1)}
             >
@@ -102,11 +113,13 @@ const Pagination = ({
           </li>
           {renderPageNumbers()}
           <li
+            style={styleNoTextSelect}
             className={`page-item ${
               currentPage === totalPages ? "disabled" : ""
             }`}
           >
             <a
+              style={styleNoTextSelect}
               className="page-link"
               onClick={() => handlePageChange(currentPage + 1)}
             >

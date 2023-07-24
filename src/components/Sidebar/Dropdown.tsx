@@ -11,6 +11,7 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ options }) => {
+  // console.log("options", options);
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
   const [onHover, setOnHover] = useState(false);
 

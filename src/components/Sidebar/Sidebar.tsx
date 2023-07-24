@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Dropdown from "./Dropdown";
 import { CSVData } from "../../interface/CSVData";
 
@@ -12,7 +12,7 @@ interface Option {
   id: number;
 }
 
-const Sidebar = ({ modData, currentPage }: Props) => {
+const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
   const itemsPerPage = 100;
   const startElement = (currentPage - 1) * itemsPerPage;
   const endElement = currentPage * itemsPerPage;

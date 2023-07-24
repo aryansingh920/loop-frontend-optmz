@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header";
-import ProductCard from "./Products/ProductCard";
 import ProductBox from "./Products/ProductBox";
 import { CSVData } from "../interface/CSVData";
 
+const style: React.CSSProperties = {
+  position: "absolute",
+  left: "20rem",
+  top: "6rem",
+  right: "0",
+  height: "85%",
+  width: "90%",
+};
+
 function App() {
   const [modData, setModData] = useState<CSVData[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   // useEffect(() => {
   //   console.log("modData", modData[currentPage - 1], currentPage);
@@ -18,17 +26,7 @@ function App() {
     <div className="removeScroll">
       <Header />
       <Sidebar modData={modData} currentPage={currentPage} />
-      <div
-        style={{
-          position: "absolute",
-          left: "20rem",
-          top: "6rem",
-          right: "0",
-          height: "85%",
-          width: "90%",
-        }}
-        className="container-fluid"
-      >
+      <div style={style} className="container-fluid">
         <ProductBox
           setModData={setModData}
           setCurrentPageApp={setCurrentPage}

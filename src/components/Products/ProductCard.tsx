@@ -4,7 +4,7 @@ interface Props {
   element: CSVData;
 }
 
-const ProductCard = ({ element }: Props) => {
+const ProductCard: React.FC<Props> = ({ element }: Props) => {
   const [isHover, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
