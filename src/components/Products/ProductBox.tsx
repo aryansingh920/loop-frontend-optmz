@@ -41,6 +41,10 @@ const ProductBox: React.FC<Props> = ({
   const itemsPerPage = 100;
 
   useEffect(() => {
+    console.log("Drop down changed", dropdownChange);
+  }, [dropdownChange]);
+
+  useEffect(() => {
     setCurrentPageApp(currentPage);
     const fetchData = async () => {
       try {

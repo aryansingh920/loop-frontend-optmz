@@ -78,25 +78,41 @@ const Sidebar: React.FC<Props> = ({
   return (
     <div className="flex-shrink-0 p-3 fixed-top bg-light" style={style}>
       <section className="uk-card uk-card-default p-1">
-        <Dropdown sectionName={"mod3"} options={mod3Options} />
+        <Dropdown
+          setDropdownChange={setDropdownChange}
+          sectionName={"mod3"}
+          options={mod3Options}
+        />
       </section>
 
       <hr />
 
       <section className="uk-card uk-card-default p-1">
-        <Dropdown sectionName={"mod3"} options={mod4Options} />
+        <Dropdown
+          setDropdownChange={setDropdownChange}
+          sectionName={"mod3"}
+          options={mod4Options}
+        />
       </section>
 
       <hr />
 
       <section className="uk-card uk-card-default p-1">
-        <Dropdown sectionName={"mod5"} options={mod5Options} />
+        <Dropdown
+          setDropdownChange={setDropdownChange}
+          sectionName={"mod5"}
+          options={mod5Options}
+        />
       </section>
 
       <hr />
 
       <section className="uk-card uk-card-default p-1">
-        <Dropdown sectionName={"mod6"} options={mod6Options} />
+        <Dropdown
+          setDropdownChange={setDropdownChange}
+          sectionName={"mod6"}
+          options={mod6Options}
+        />
       </section>
     </div>
   );
