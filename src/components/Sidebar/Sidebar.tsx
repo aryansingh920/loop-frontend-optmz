@@ -1,6 +1,25 @@
 import React from "react";
+import Dropdown from "./Dropdown";
 
 const Sidebar = () => {
+  // Define the options for each dropdown
+  const options1 = [
+    { name: "Option 1️⃣", id: 1 },
+    { name: "Option 2️⃣", id: 2 },
+  ];
+
+  const options2 = [
+    { name: "Option A", id: 11 },
+    { name: "Option B", id: 12 },
+    { name: "Option C", id: 13 },
+  ];
+
+  const options3 = [
+    { name: "Choice X", id: 21 },
+    { name: "Choice Y", id: 22 },
+    { name: "Choice Z", id: 23 },
+  ];
+
   return (
     <>
       <div
@@ -14,195 +33,15 @@ const Sidebar = () => {
           borderRight: "1px solid #dee2e6",
         }}
       >
-        <a
-          href="/"
-          className="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom"
-        >
-          <svg className="bi pe-none me-2" width="30" height="24">
-            <use xlinkHref="#bootstrap"></use>
-          </svg>
-          <span className="fs-5 fw-semibold">Collapsible</span>
-        </a>
-        <ul className="list-unstyled ps-0">
-          <li className="mb-1">
-            <button
-              className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#home-collapse"
-              aria-expanded="false"
-            >
-              Home
-            </button>
-            <div className="collapse" id="home-collapse">
-              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Overview
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Updates
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Reports
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="mb-1">
-            <button
-              className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#dashboard-collapse"
-              aria-expanded="false"
-            >
-              Dashboard
-            </button>
-            <div className="collapse" id="dashboard-collapse">
-              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li>
-                  // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Overview
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Weekly
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Monthly
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Annually
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="mb-1">
-            <button
-              className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#orders-collapse"
-              aria-expanded="false"
-            >
-              Orders
-            </button>
-            <div className="collapse" id="orders-collapse">
-              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    New
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Processed
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Shipped
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                  >
-                    Returned
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="border-top my-3"></li>
-          <li className="mb-1">
-            <button
-              className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#account-collapse"
-              aria-expanded="false"
-            >
-              Account
-            </button>
-            <div className="collapse" id="account-collapse">
-              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li>
-                  <a
-                    href="#"
-                    className="link-dark d-inline-flex text-decoration-none rounded"
-                  >
-                    New...
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-dark d-inline-flex text-decoration-none rounded"
-                  >
-                    Profile
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-dark d-inline-flex text-decoration-none rounded"
-                  >
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="link-dark d-inline-flex text-decoration-none rounded"
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+        {/* Pass the options as props to each Dropdown component */}
+        <h5>mod3</h5>
+        <Dropdown options={options1} />
+        <h5>mod4</h5>
+        <Dropdown options={options2} />
+        <h5>mod5</h5>
+        <Dropdown options={options3} />
+        <h5>mod6</h5>
+        <Dropdown options={options3} />
       </div>
     </>
   );
