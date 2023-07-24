@@ -25,7 +25,7 @@ const style2: CSSProperties = {
   height: "100px",
 };
 
-interface Props {
+export interface Props {
   setModData: (newData: CSVData[]) => void; // Correct type for setModData prop
   setCurrentPageApp: React.Dispatch<React.SetStateAction<number>>;
   dropdownChange: DropdownChange | undefined;

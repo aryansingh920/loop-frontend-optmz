@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CSVData } from "../../interface/CSVData";
-interface Props {
+export interface Props {
   element: CSVData;
 }
 

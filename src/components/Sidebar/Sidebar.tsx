@@ -12,7 +12,7 @@ const style: React.CSSProperties = {
   height: "calc(100vh - 72px)",
 };
 
-interface Props {
+export interface Props {
   modData: CSVData[];
   currentPage: number;
   setDropdownChange: React.Dispatch<

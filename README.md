@@ -17,10 +17,15 @@ bash run.sh
 
 ```
 
+and will be accessible at : http://localhost:3000/
+
 ## Storyboard Integration
+
 ```bash
 npm exec -- npm run storybook -- --initial-path=/onboarding --quiet
 ```
+
+and will be accessible at : http://localhost:6006/?path=/story/components-pagination--default
 
 ## Details
 

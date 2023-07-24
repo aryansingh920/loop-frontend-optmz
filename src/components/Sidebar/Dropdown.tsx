@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Multiselect from "multiselect-react-dropdown";
 import { Option } from "../../interface/Option";
 import { DropdownChange } from "../../interface/DropdownChange";
-interface DropdownProps {
+export interface DropdownProps {
   options: Option[];
   sectionName: string;
   setDropdownChange: React.Dispatch<
