@@ -19,25 +19,53 @@ const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
 
   const slicedData = modData.slice(startElement, endElement);
 
-  const mod3Options: Option[] = slicedData.map((item, index) => ({
-    name: item.mod3.toString(),
-    id: index, // Use the index as the id for the options
-  }));
+  // Function to check if the option with the same name already exists in the options array
+  const isDuplicateOption = (
+    options: Option[],
+    optionName: string
+  ): boolean => {
+    return options.some((option) => option.name === optionName);
+  };
 
-  const mod4Options: Option[] = slicedData.map((item, index) => ({
-    name: item.mod4.toString(),
-    id: index, // Use the index as the id for the options
-  }));
+  const mod3Options: Option[] = [];
+  const mod4Options: Option[] = [];
+  const mod5Options: Option[] = [];
+  const mod6Options: Option[] = [];
 
-  const mod5Options: Option[] = slicedData.map((item, index) => ({
-    name: item.mod5.toString(),
-    id: index, // Use the index as the id for the options
-  }));
+  // Iterate through the slicedData array and add options only if they are unique
+  slicedData.forEach((item, index) => {
+    const mod3Value = item.mod3.toString();
+    if (!isDuplicateOption(mod3Options, mod3Value)) {
+      mod3Options.push({
+        name: mod3Value,
+        id: index,
+      });
+    }
 
-  const mod6Options: Option[] = slicedData.map((item, index) => ({
-    name: item.mod6.toString(),
-    id: index, // Use the index as the id for the options
-  }));
+    const mod4Value = item.mod4.toString();
+    if (!isDuplicateOption(mod4Options, mod4Value)) {
+      mod4Options.push({
+        name: mod4Value,
+        id: index,
+      });
+    }
+
+    const mod5Value = item.mod5.toString();
+    if (!isDuplicateOption(mod5Options, mod5Value)) {
+      mod5Options.push({
+        name: mod5Value,
+        id: index,
+      });
+    }
+
+    const mod6Value = item.mod6.toString();
+    if (!isDuplicateOption(mod6Options, mod6Value)) {
+      mod6Options.push({
+        name: mod6Value,
+        id: index,
+      });
+    }
+  });
 
   return (
     <div
