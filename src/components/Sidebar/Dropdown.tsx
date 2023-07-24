@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import Multiselect from "multiselect-react-dropdown";
-
-interface Option {
-  name: string;
-  id: number;
-}
+import { Option } from "../../interface/Option";
 
 interface DropdownProps {
   options: Option[];
+  sectionName: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, sectionName }) => {
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
   const [onHover, setOnHover] = useState(false);
 
@@ -25,15 +22,22 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
   };
 
   const onSelect = (selectedList: Option[], selectedItem: Option) => {
+    console.log("selectedList");
+    console.log(sectionName);
+    console.log(selectedList, selectedItem);
     setSelectedValues(selectedList);
   };
 
   const onRemove = (selectedList: Option[], removedItem: Option) => {
+    console.log("removedItem");
+    console.log(sectionName);
+    console.log(selectedList, removedItem);
     setSelectedValues(selectedList);
   };
 
   return (
     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <h5>{sectionName}</h5>
       <Multiselect
         style={{
           multiselectContainer: {

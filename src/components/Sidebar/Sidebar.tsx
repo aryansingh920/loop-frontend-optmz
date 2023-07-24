@@ -1,6 +1,8 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 import { CSVData } from "../../interface/CSVData";
+import { Option } from "../../interface/Option";
+import { DropdownChange } from "../../interface/DropdownChange";
 
 const style: React.CSSProperties = {
   top: "72px",
@@ -13,14 +15,16 @@ const style: React.CSSProperties = {
 interface Props {
   modData: CSVData[];
   currentPage: number;
+  setDropdownChange: React.Dispatch<
+    React.SetStateAction<DropdownChange | undefined>
+  >;
 }
 
-interface Option {
-  name: string;
-  id: number;
-}
-
-const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
+const Sidebar: React.FC<Props> = ({
+  modData,
+  currentPage,
+  setDropdownChange,
+}: Props) => {
   const itemsPerPage = 100;
   const startElement = (currentPage - 1) * itemsPerPage;
   const endElement = currentPage * itemsPerPage;
@@ -73,14 +77,27 @@ const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
 
   return (
     <div className="flex-shrink-0 p-3 fixed-top bg-light" style={style}>
-      <h5>mod3</h5>
-      <Dropdown options={mod3Options} />
-      <h5>mod4</h5>
-      <Dropdown options={mod4Options} />
-      <h5>mod5</h5>
-      <Dropdown options={mod5Options} />
-      <h5>mod6</h5>
-      <Dropdown options={mod6Options} />
+      <section className="uk-card uk-card-default p-1">
+        <Dropdown sectionName={"mod3"} options={mod3Options} />
+      </section>
+
+      <hr />
+
+      <section className="uk-card uk-card-default p-1">
+        <Dropdown sectionName={"mod3"} options={mod4Options} />
+      </section>
+
+      <hr />
+
+      <section className="uk-card uk-card-default p-1">
+        <Dropdown sectionName={"mod5"} options={mod5Options} />
+      </section>
+
+      <hr />
+
+      <section className="uk-card uk-card-default p-1">
+        <Dropdown sectionName={"mod6"} options={mod6Options} />
+      </section>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header";
 import ProductBox from "./Products/ProductBox";
 import { CSVData } from "../interface/CSVData";
+import { DropdownChange } from "../interface/DropdownChange";
 
 const style: React.CSSProperties = {
   position: "absolute",
@@ -17,12 +18,21 @@ const style: React.CSSProperties = {
 function App() {
   const [modData, setModData] = useState<CSVData[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [dropdownChange, setDropdownChange] = useState<
+    DropdownChange | undefined
+  >();
+
   return (
     <div className="removeScroll">
       <Header />
-      <Sidebar modData={modData} currentPage={currentPage} />
+      <Sidebar
+        setDropdownChange={setDropdownChange}
+        modData={modData}
+        currentPage={currentPage}
+      />
       <div style={style} className="container-fluid">
         <ProductBox
+          dropdownChange={dropdownChange}
           setModData={setModData}
           setCurrentPageApp={setCurrentPage}
         />

@@ -3,6 +3,7 @@ import Papa from "papaparse";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
 import { CSVData } from "../../interface/CSVData";
+import { DropdownChange } from "../../interface/DropdownChange";
 
 const style1: CSSProperties = {
   height: "calc(100vh - 220px)",
@@ -27,11 +28,13 @@ const style2: CSSProperties = {
 interface Props {
   setModData: React.Dispatch<React.SetStateAction<CSVData[]>>;
   setCurrentPageApp: React.Dispatch<React.SetStateAction<number>>;
+  dropdownChange: DropdownChange | undefined;
 }
 
 const ProductBox: React.FC<Props> = ({
   setModData,
   setCurrentPageApp,
+  dropdownChange,
 }: Props) => {
   const [data, setData] = useState<CSVData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
