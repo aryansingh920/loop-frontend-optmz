@@ -4,6 +4,8 @@
 
 We aim to develop a dummy business intelligence dashboard with filter functionality that displays data. The goal is to mimic the filter behavior seen on platforms like Amazon, where selecting certain attributes adjusts the available filter options for other attributes based on the selected data.
 
+Notion Link : https://loopxyz.notion.site/Front-End-Filter-Optimization-d8e4f1b0f86d4caeb6ae7385042c71ae
+
 ## Website Link
 
 https://loop-frontend.vercel.app/
