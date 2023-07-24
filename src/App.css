@@ -123,3 +123,15 @@
   left: "0";
   margin-bottom: "20px";
 }
+
+/* Add the media query to hide the Header in mobile view */
+@media (max-width: 768px) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-container > header {
+    display: none;
+  }
+}

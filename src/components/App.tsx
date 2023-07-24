@@ -20,22 +20,24 @@ function App() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [dropdownChange, setDropdownChange] = useState<
     DropdownChange | undefined
-  >();
+  >(undefined);
 
   return (
     <div className="removeScroll">
-      <Header />
-      <Sidebar
-        setDropdownChange={setDropdownChange}
-        modData={modData}
-        currentPage={currentPage}
-      />
-      <div style={style} className="container-fluid">
-        <ProductBox
-          dropdownChange={dropdownChange}
-          setModData={setModData}
-          setCurrentPageApp={setCurrentPage}
+      <div className="app-container">
+        <Header />
+        <Sidebar
+          setDropdownChange={setDropdownChange}
+          modData={modData}
+          currentPage={currentPage}
         />
+        <div style={style} className="container-fluid">
+          <ProductBox
+            dropdownChange={dropdownChange}
+            setModData={setModData}
+            setCurrentPageApp={setCurrentPage}
+          />
+        </div>
       </div>
     </div>
   );
