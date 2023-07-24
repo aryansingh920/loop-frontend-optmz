@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-
-interface CSVData {
-  number: number;
-  mod3: number;
-  mod4: number;
-  mod5: number;
-  mod6: number;
-}
-
+import { CSVData } from "../../interface/CSVData";
 interface Props {
-  element: CSVData; // Change the type of 'element' prop to 'CSVData'
+  element: CSVData;
 }
 
 const ProductCard = ({ element }: Props) => {

@@ -19,11 +19,9 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
   };
 
   const handleMouseLeave = () => {
-    // change to false in 5sec
     setTimeout(() => {
       setOnHover(false);
     }, 3000);
-    // setOnHover(false);
   };
 
   const onSelect = (selectedList: Option[], selectedItem: Option) => {
@@ -39,7 +37,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
       <Multiselect
         style={{
           multiselectContainer: {
-            height: onHover ? "200px" : "60px",
+            height: onHover ? "200px" : "100px",
           },
           chips: {
             background: "lightblue",

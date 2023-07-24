@@ -1,49 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Dropdown from "./Dropdown";
+import { CSVData } from "../../interface/CSVData";
 
-const Sidebar = () => {
-  // Define the options for each dropdown
-  const options1 = [
-    { name: "Option 1️⃣", id: 1 },
-    { name: "Option 2️⃣", id: 2 },
-  ];
+interface Props {
+  modData: CSVData[];
+  currentPage: number;
+}
 
-  const options2 = [
-    { name: "Option A", id: 11 },
-    { name: "Option B", id: 12 },
-    { name: "Option C", id: 13 },
-  ];
+interface Option {
+  name: string;
+  id: number;
+}
 
-  const options3 = [
-    { name: "Choice X", id: 21 },
-    { name: "Choice Y", id: 22 },
-    { name: "Choice Z", id: 23 },
-  ];
+const Sidebar = ({ modData, currentPage }: Props) => {
+  const itemsPerPage = 100;
+  const startElement = (currentPage - 1) * itemsPerPage;
+  const endElement = currentPage * itemsPerPage;
+
+  const slicedData = modData.slice(startElement, endElement);
+
+  const mod3Options: Option[] = slicedData.map((item, index) => ({
+    name: item.mod3.toString(),
+    id: index, // Use the index as the id for the options
+  }));
+
+  const mod4Options: Option[] = slicedData.map((item, index) => ({
+    name: item.mod4.toString(),
+    id: index, // Use the index as the id for the options
+  }));
+
+  const mod5Options: Option[] = slicedData.map((item, index) => ({
+    name: item.mod5.toString(),
+    id: index, // Use the index as the id for the options
+  }));
+
+  const mod6Options: Option[] = slicedData.map((item, index) => ({
+    name: item.mod6.toString(),
+    id: index, // Use the index as the id for the options
+  }));
 
   return (
-    <>
-      <div
-        className="flex-shrink-0 p-3 fixed-top bg-light "
-        style={{
-          top: "72px",
-          width: "280px",
-          height: "100%",
-          overflowY: "auto",
-          overflowX: "hidden",
-          borderRight: "1px solid #dee2e6",
-        }}
-      >
-        {/* Pass the options as props to each Dropdown component */}
-        <h5>mod3</h5>
-        <Dropdown options={options1} />
-        <h5>mod4</h5>
-        <Dropdown options={options2} />
-        <h5>mod5</h5>
-        <Dropdown options={options3} />
-        <h5>mod6</h5>
-        <Dropdown options={options3} />
-      </div>
-    </>
+    <div
+      className="flex-shrink-0 p-3 fixed-top bg-light"
+      style={{ top: "72px", width: "280px", borderRight: "1px solid #dee2e6" }}
+    >
+      {/* Pass the options as props to each Dropdown component */}
+      <h5>mod3</h5>
+      <Dropdown options={mod3Options} />
+      <h5>mod4</h5>
+      <Dropdown options={mod4Options} />
+      <h5>mod5</h5>
+      <Dropdown options={mod5Options} />
+      <h5>mod6</h5>
+      <Dropdown options={mod6Options} />
+    </div>
   );
 };
 

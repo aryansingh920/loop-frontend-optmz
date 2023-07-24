@@ -2,21 +2,20 @@ import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
+import { CSVData } from "../../interface/CSVData";
 
-interface CSVData {
-  number: number;
-  mod3: number;
-  mod4: number;
-  mod5: number;
-  mod6: number;
+interface Props {
+  setModData: React.Dispatch<React.SetStateAction<CSVData[]>>;
+  setCurrentPageApp: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const ProductBox = () => {
+const ProductBox = ({ setModData, setCurrentPageApp }: Props) => {
   const [data, setData] = useState<CSVData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 100; // Show 100 items per page
 
   useEffect(() => {
+    setCurrentPageApp(currentPage);
     const fetchData = async () => {
       try {
         const response = await fetch("./data/dataset_small.csv");
@@ -32,12 +31,13 @@ const ProductBox = () => {
         });
 
         setData(result.data);
+        setModData(result.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
     fetchData();
-  }, []);
+  }, [currentPage]);
 
   // Calculate the index range for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
