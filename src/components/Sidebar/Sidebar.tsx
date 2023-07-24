@@ -26,8 +26,6 @@ const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
   const endElement = currentPage * itemsPerPage;
 
   const slicedData = modData.slice(startElement, endElement);
-
-  // Function to check if the option with the same name already exists in the options array
   const isDuplicateOption = (
     options: Option[],
     optionName: string
@@ -39,8 +37,6 @@ const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
   const mod4Options: Option[] = [];
   const mod5Options: Option[] = [];
   const mod6Options: Option[] = [];
-
-  // Iterate through the slicedData array and add options only if they are unique
   slicedData.forEach((item, index) => {
     const mod3Value = item.mod3.toString();
     if (!isDuplicateOption(mod3Options, mod3Value)) {
@@ -77,7 +73,6 @@ const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
 
   return (
     <div className="flex-shrink-0 p-3 fixed-top bg-light" style={style}>
-      {/* Pass the options as props to each Dropdown component */}
       <h5>mod3</h5>
       <Dropdown options={mod3Options} />
       <h5>mod4</h5>

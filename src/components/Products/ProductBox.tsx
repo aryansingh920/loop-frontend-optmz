@@ -5,7 +5,7 @@ import Pagination from "./Pagination";
 import { CSVData } from "../../interface/CSVData";
 
 const style1: CSSProperties = {
-  height: "calc(100vh - 220px)", // Subtract the height of pagination from the viewport height
+  height: "calc(100vh - 220px)",
   width: "100%",
   overflowY: "scroll",
   overflowX: "hidden",
@@ -21,7 +21,7 @@ const style2: CSSProperties = {
   bottom: "0",
   width: "100%",
   left: "0",
-  height: "100px", // Set a fixed height for the pagination box
+  height: "100px",
 };
 
 interface Props {
@@ -35,7 +35,7 @@ const ProductBox: React.FC<Props> = ({
 }: Props) => {
   const [data, setData] = useState<CSVData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 100; // Show 100 items per page
+  const itemsPerPage = 100;
 
   useEffect(() => {
     setCurrentPageApp(currentPage);
@@ -62,7 +62,6 @@ const ProductBox: React.FC<Props> = ({
     fetchData();
   }, [currentPage, setCurrentPageApp, setModData]);
 
-  // Calculate the index range for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
@@ -74,7 +73,6 @@ const ProductBox: React.FC<Props> = ({
           <ProductCard key={index} element={item} />
         ))}
       </div>
-      {/* move the pagination to the bottom center */}
       <div style={style2}>
         <Pagination
           currentPage={currentPage}

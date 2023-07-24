@@ -28,7 +28,6 @@ const ProductCard: React.FC<Props> = ({ element }: Props) => {
           }}
         >
           <h3 className="uk-card-title text-center">{element.number}</h3>
-          {/* Additional data rendering if needed */}
         </div>
       </div>
     </div>

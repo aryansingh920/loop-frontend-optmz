@@ -24,9 +24,8 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const renderPageNumbers = () => {
     const pageNumbers = [];
-    const maxDisplayedPages = 5; // Number of page numbers to display on the pagination bar
+    const maxDisplayedPages = 5;
 
-    // If the total pages are less than or equal to the maxDisplayedPages, show all pages
     if (totalPages <= maxDisplayedPages) {
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(
@@ -41,8 +40,6 @@ const Pagination: React.FC<PaginationProps> = ({
         );
       }
     } else {
-      // Display pagination with ellipsis
-
       const leftEllipsis =
         currentPage > 2 && totalPages > maxDisplayedPages ? (
           <li key="leftEllipsis" className="page-item disabled">
@@ -81,12 +78,10 @@ const Pagination: React.FC<PaginationProps> = ({
         );
       }
 
-      // Add left ellipsis if needed
       if (startPage > 1) {
         pageNumbers.unshift(leftEllipsis);
       }
 
-      // Add right ellipsis if needed
       if (endPage < totalPages) {
         pageNumbers.push(rightEllipsis);
       }

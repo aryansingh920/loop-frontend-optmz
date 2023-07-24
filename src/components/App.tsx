@@ -17,11 +17,6 @@ const style: React.CSSProperties = {
 function App() {
   const [modData, setModData] = useState<CSVData[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-
-  // useEffect(() => {
-  //   console.log("modData", modData[currentPage - 1], currentPage);
-  // }, [modData, currentPage]);
-
   return (
     <div className="removeScroll">
       <Header />
