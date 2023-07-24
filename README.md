@@ -17,6 +17,11 @@ bash run.sh
 
 ```
 
+## Storyboard Integration
+```bash
+npm exec -- npm run storybook -- --initial-path=/onboarding --quiet
+```
+
 ## Details
 
 The application will have a data table with pagination (100 rows per page) and scrolling (showing 20 entries at a time).
