@@ -2,6 +2,14 @@ import React from "react";
 import Dropdown from "./Dropdown";
 import { CSVData } from "../../interface/CSVData";
 
+const style: React.CSSProperties = {
+  top: "72px",
+  width: "280px",
+  borderRight: "1px solid #dee2e6",
+  overflowY: "scroll",
+  height: "calc(100vh - 72px)",
+};
+
 interface Props {
   modData: CSVData[];
   currentPage: number;
@@ -68,10 +76,7 @@ const Sidebar: React.FC<Props> = ({ modData, currentPage }: Props) => {
   });
 
   return (
-    <div
-      className="flex-shrink-0 p-3 fixed-top bg-light"
-      style={{ top: "72px", width: "280px", borderRight: "1px solid #dee2e6" }}
-    >
+    <div className="flex-shrink-0 p-3 fixed-top bg-light" style={style}>
       {/* Pass the options as props to each Dropdown component */}
       <h5>mod3</h5>
       <Dropdown options={mod3Options} />

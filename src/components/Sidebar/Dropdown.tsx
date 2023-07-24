@@ -38,10 +38,10 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
       <Multiselect
         style={{
           multiselectContainer: {
-            height: onHover ? "200px" : "100px",
+            height: onHover ? "300px" : "299px",
           },
           chips: {
-            background: "lightblue",
+            background: "%0096FB",
           },
         }}
         options={options}
